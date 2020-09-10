@@ -2,11 +2,42 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+#plans:
+# loop over length of total input array
+# Multiply all numbers except the one at that index
+# exclude current number at each index
+
+#poss. steps:
+#make storage arrays
+#One array to copy and distinguish current index
+#One to hold results
+
+#append result in result array
+#pop current index out of copy array and then multiply rest
+
+
+
 def product_of_all_other_numbers(arr):
     # Your code here
+    
+    # result array
+    result = []
 
-    pass
+    #map input array to make copy, select all with *
+    for i in range(len(arr)):
 
+        arr_copy = [*arr]
+        arr_copy.pop(i)
+        # Remove current index
+
+        #Loop back over modified/sorted array and multiply values
+        product = 1
+        for value in arr_copy:
+            product *= value
+
+        result.append(product)
+
+    return result
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
